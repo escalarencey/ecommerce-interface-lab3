@@ -1,0 +1,100 @@
+
+/* Main cart container layout */
+#cart-page main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+/* List of cart items */
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+/* Individual cart item layout using block display */
+.cart-items li {
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    text-align: left;
+    overflow: auto; 
+}
+
+.cart-items li img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.cart-items h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Quantity input alignment */
+.item-qty {
+    float: right;
+    margin-top: -30px; 
+}
+
+.item-qty input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Summary section alignment */
+.cart-summary {
+    text-align: right;
+    margin-top: 30px;
+}
+
+/* Task 2.2 & 2.3: Button states and smooth transition */
+.checkout-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Task 4.1: Styling for empty cart container */
+.cart-items:empty {
+    padding: 60px;
+    background-color: #fffafa;
+    border: 2px dashed var(--required-red);
+    text-align: center;
+}
+
+/* Task 4.1: Message displayed when the cart is empty */
+.cart-items:empty::after {
+    content: "Your cart is currently empty. 🐾 Go back and find something your pet will love!";
+    display: block;
+    color: var(--required-red);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Hide summary when no items are present */
+.cart-items:empty ~ .cart-summary {
+    display: none;
+}
+

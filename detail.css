@@ -1,0 +1,175 @@
+
+/* Page background and layout setup */
+#product-detail-page {
+    background-color: #f8f9fc;
+    margin: 0;
+}
+
+/* Header and navigation styling */
+.main-header {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+
+/* Task 2.1: Navigation without default list styles */
+.top-nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.top-nav ul li {
+    display: inline-block; 
+    margin: 0 15px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Container for product information */
+.detail-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.product-hero {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detail-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+}
+
+/* Task 4.2: Automatic currency symbol for prices */
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 15px 0;
+}
+
+.price::before {
+    content: "₱";
+}
+
+/* Task 5.1: Styling for technical specifications table */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.spec-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+/* Task 5.1: First column styling using pseudo-class */
+.spec-table td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    width: 35%;
+}
+
+/* Review section cards */
+.review-card {
+    padding: 20px;
+    background: #fafaff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Task 5.3: Styled quotation marks for reviews using pseudo-elements */
+.review-text {
+    font-style: italic;
+    position: relative;
+    padding: 0 25px;
+    margin: 10px 0;
+}
+
+.review-text::before {
+    content: "“";
+    font-size: 2.5em;
+    color: var(--accent-color);
+    position: absolute;
+    left: -5px;
+    top: -10px;
+}
+
+.review-text::after {
+    content: "”";
+    font-size: 2.5em;
+    color: var(--accent-color);
+    position: absolute;
+    right: -5px;
+    bottom: -30px;
+}
+
+/* Form controls for quantity and purchase */
+#quantity {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 70px;
+    margin-right: 10px;
+}
+
+.add-btn {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   TASK 5.2: RESPONSIVE TABLES
+   ===================================================== */
+
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    margin-bottom: 20px;
+}
+
+.spec-table {
+    min-width: 300px; 
+    width: 100%;
+}
+
+/* =====================================================
+   TASK 5.2: RESPONSIVE TABLES
+   ===================================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling in mobile */
+    margin-bottom: 20px;
+}
+
+.spec-table {
+    min-width: 300px; 
+    width: 100%;
+}
+

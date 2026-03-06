@@ -1,0 +1,359 @@
+/* TASK 1: GLOBAL VARIABLES & FONTS */
+:root {
+    --primary-color: #4B0082;
+    --accent-color: #D4AF37;
+    --bg-light: #f4f4f4;
+    --text-main: #333333;
+    --white: #ffffff;
+    --valid-green: #2ecc71;
+    --required-red: #e74c3c;
+}
+
+/* Task 1.1: Sans-serif for body */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif; 
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+/* Task 1.1: Serif for headings */
+h1, h2, h3 { 
+    font-family: 'Georgia', serif; 
+    color: var(--primary-color); 
+}
+
+main {
+    display: block;
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: left; 
+    overflow: auto;   
+}
+
+/* TASK 2: INTERACTIVE STATES */
+
+/* Task 2.1 & 2.2: Nav links and transition */
+nav a {
+    text-decoration: none; 
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+/* Task 2.3: Hover effect */
+nav a:hover {
+    color: var(--accent-color);
+    text-decoration: underline; 
+}
+
+/* Task 2.2: Button transitions */
+.btn, button {
+    background-color: var(--primary-color); 
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+/* Task 2.3 & 2.4: Hover and Active states */
+.btn:hover, button:hover {
+    background-color: var(--accent-color); 
+    border-color: var(--accent-color);
+    color: var(--primary-color); 
+}
+
+.btn:active, button:active {
+    transform: scale(0.95);
+}
+
+/* Task 2.5: Focus indicator */
+input:focus, button:focus {
+    outline: 3px solid var(--accent-color); 
+    outline-offset: 2px;
+}
+
+/* TASK 3: PRODUCT CARDS */
+
+/* Task 3.1: Card alignment */
+article {
+    display: inline-block; 
+    vertical-align: top;
+    width: 250px;          
+    margin: 15px;
+    padding: 20px;
+    background-color: var(--white); 
+    border: 1px solid #ddd;         
+    border-radius: 15px;           
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Task 3.3: Alternating backgrounds */
+article:nth-child(odd) { background-color: #fffdf5; }
+article:nth-child(even) { background-color: #f9f5ff; }
+
+/* TASK 4 & 5: ADVANCED SELECTORS */
+
+/* Task 4.1: Empty state */
+section:empty {
+    padding: 50px;
+    background-color: #ffeaea;
+    border: 2px dashed var(--required-red);
+    text-align: center;
+}
+section:empty::after {
+    content: "Your cart is currently empty. Start shopping!";
+    color: var(--required-red);
+    font-weight: bold;
+}
+
+/* Task 4.2: Price symbol */
+.price::before {
+    content: "₱";
+    font-weight: bold;
+}
+
+/* Task 4.3: Form validation */
+input:required {
+    border-left: 5px solid var(--required-red);
+}
+input:valid {
+    border: 2px solid var(--valid-green);
+    background-color: #f0fff0;
+}
+
+/* Task 5.1: Table column styling */
+table tr td:first-child {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+/* Task 5.2: List marker styling */
+.order-history li::marker {
+    color: var(--primary-color);
+    content: "🐾 ";
+}
+
+/* Task 5.3: Review quotation marks */
+.user-review blockquote::before {
+    content: "“";
+    font-size: 2em;
+    color: var(--accent-color);
+}
+.user-review blockquote::after {
+    content: "”";
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+/* =====================================================
+LAB 3: RESPONSIVE DESIGN (MOBILE FIRST)
+===================================================== */
+
+/* ---------- GLOBAL RESPONSIVE IMAGES ---------- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- HEADER FLEXBOX (MOBILE FIRST) ---------- */
+header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+header nav ul{
+    display:flex;
+    flex-direction:column;
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+/* ---------- HERO FLEX CENTER ---------- */
+.hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ---------- PRODUCT GRID (MOBILE) ---------- */
+.product-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+/* ---------- PRODUCTS + SIDEBAR LAYOUT ---------- */
+.catalog-main{
+    display:grid;
+    grid-template-columns:1fr;
+}
+
+/* ---------- CART FLEXBOX ---------- */
+.cart-items li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.cart-items img{
+    float:none;
+}
+
+.item-qty{
+    margin-left:auto;
+}
+
+/* ---------- CHECKOUT MOBILE ---------- */
+.checkout-layout{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* ---------- TABLE RESPONSIVE ---------- */
+.table-wrapper{
+    overflow-x:auto;
+}
+
+/* ---------- PRODUCT CARD ANIMATION ---------- */
+.product-card{
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ---------- BUTTON HOVER ANIMATION ---------- */
+.btn:hover{
+    animation:pulse 0.4s ease-in-out;
+}
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+/* =====================================================
+TABLET BREAKPOINT
+481px — 768px
+===================================================== */
+
+@media (min-width:481px){
+
+/* NAVIGATION */
+header nav ul{
+    flex-direction:row;
+    gap:20px;
+}
+
+/* PRODUCT GRID */
+.product-list{
+    grid-template-columns:repeat(2,1fr);
+}
+
+/* SIDEBAR STACK */
+.catalog-main{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* =====================================================
+DESKTOP BREAKPOINT
+769px — 1280px
+===================================================== */
+
+@media (min-width:769px){
+
+/* HEADER LAYOUT */
+header{
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+/* NAV */
+header nav ul{
+    flex-direction:row;
+}
+
+/* PRODUCT GRID */
+.product-list{
+    grid-template-columns:repeat(4,minmax(200px,1fr));
+}
+
+/* SIDEBAR + PRODUCTS */
+.catalog-main{
+    grid-template-columns:25% 75%;
+    gap:20px;
+}
+
+.filter-sidebar{
+    order:1;
+}
+
+.product-list{
+    order:2;
+}
+
+/* CHECKOUT SIDE BY SIDE */
+.checkout-layout{
+    flex-direction:row;
+}
+
+.form-container{
+    flex:2;
+}
+
+.summary-sidebar{
+    flex:1;
+}
+
+}
+
+/* =====================================================
+   TASK 5.1: FLUID IMAGES (GLOBAL)
+   ===================================================== */
+img, 
+article img, 
+.hero img, 
+.detail-img {
+    max-width: 100% !important; 
+    height: auto !important;    
+    display: block;
+}
+

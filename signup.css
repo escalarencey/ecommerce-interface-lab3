@@ -1,0 +1,43 @@
+
+/* Container for the signup form */
+#signup-page .auth-box {
+    display: inline-block;
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-align: left;
+}
+
+/* Task 4.3: Style for mandatory fields */
+#signup-page input:required {
+    border-left: 6px solid #D1C4E9; 
+    background-color: #FAFAFF;      
+    transition: all 0.3s ease; /* Task 2.2: Smooth transition */
+}
+
+/* Task 4.3: Style when input meets requirements */
+#signup-page input:valid {
+    border-left: 6px solid var(--valid-green); 
+    border-bottom: 2px solid var(--valid-green);
+    background-color: #f0fff0;
+}
+
+/* Task 2.5: Visual indicator for focused fields */
+#signup-page input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* General input dimensions and styling */
+#signup-page input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: inherit;
+}

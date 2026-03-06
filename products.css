@@ -1,0 +1,78 @@
+
+/* =====================================================
+   TASK 6: ADVANCED LAYOUT (THE SIDEBAR)
+   ===================================================== */
+
+/* MOBILE: Aside (filter) appears above Main (grid) */
+.catalog-container { 
+    display: grid;
+    grid-template-columns: 1fr; /* Single column stack */
+    gap: 20px;
+}
+
+/* DESKTOP: 769px and up */
+@media (min-width: 769px) {
+    .catalog-container {
+        display: grid;
+        /* Task 6.2: Aside takes 25%, Main takes the rest */
+        grid-template-columns: 25% 1fr; 
+        align-items: start;
+    }
+
+    .filter-sidebar {
+        position: sticky;
+        top: 20px;
+    }
+}
+
+
+/* =====================================================
+   LAB 3: RESPONSIVE LAYOUT (TASK 3 & 6)
+   ===================================================== */
+
+/* TASK 6.1: MOBILE FIRST (Aside above Main) */
+.catalog-main {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: 20px;
+    width: 95%;
+    margin: 20px auto;
+}
+
+/* TASK 3.1: PRODUCT GRID (1 COLUMN ON MOBILE) */
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+/* --- TABLET BREAKPOINT (481px to 768px) --- */
+@media (min-width: 481px) {
+    /* TASK 3.2: 2-COLUMN GRID */
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- DESKTOP BREAKPOINT (769px to 1280px) --- */
+@media (min-width: 769px) {
+    /* TASK 6.2: TWO-COLUMN LAYOUT (SIDEBAR 25%) */
+    .catalog-main {
+        grid-template-columns: 25% 1fr; 
+        align-items: start;
+    }
+
+    /* TASK 3.3: 4-COLUMN GRID USING REPEAT & MINMAX */
+    .product-list {
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+    }
+}
+
+/* TASK 5.1: FLUID IMAGES (RETAINING YOUR DESIGN) */
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+

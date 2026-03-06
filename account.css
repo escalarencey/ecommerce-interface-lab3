@@ -1,0 +1,211 @@
+/* Page background and typography */
+#account-page {
+    background-color: #f4f4f9;
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header section styling */
+.account-header {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+
+.account-header h1, .account-header h2 {
+    font-size: 2.2em;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.account-header span {
+    color: var(--primary-color); 
+    font-weight: bold;
+}
+
+/* Task 2.1: Navigation without default bullets */
+.account-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.account-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Task 2.2 & 2.3: Link transitions and hover state */
+.account-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.account-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main container layout */
+.account-main {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px; 
+}
+
+.section-title {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    text-align: left;
+}
+
+/* Order card container */
+.order-expansion {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.order-expansion summary {
+    padding: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.order-expansion summary:hover {
+    background-color: #fafaff;
+}
+
+.order-content {
+    padding: 25px;
+    border-top: 1px solid #eee;
+    min-height: 200px; 
+    background-color: #fff;
+}
+
+/* Task 5.2: Custom markers for order history list */
+.purchase-history {
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+.purchase-history li::marker {
+    content: "🐾 "; 
+    color: var(--primary-color);
+}
+
+.purchase-history li {
+    padding: 8px 0;
+    border-bottom: 1px ghostwhite solid;
+}
+
+/* Detailed order metadata styling */
+.order-meta {
+    padding: 20px;
+    background: #f9f9fb;
+    border-radius: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+.order-meta dt {
+    font-weight: bold;
+    font-size: 0.75em;
+    color: #999;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.order-meta dd {
+    margin-left: 0;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Task 4.2: Automatic currency symbol before price */
+.price::before {
+    content: "₱";
+    font-weight: bold;
+}
+
+
+/* BACK BUTTON STYLE */
+.back-nav {
+    text-align: left;
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateX(-5px); /* Simple interaction */
+}
+
+/* TASK 1 & 2: RESPONSIVE BREAKPOINTS (MOBILE FIRST) */
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+    .account-header {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+    
+    .account-nav ul {
+        display: flex;
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 10px;
+    }
+    
+    .back-nav {
+        text-align: center; /* Center back button on mobile */
+    }
+}
+
+/* Tablet and Desktop adjustment */
+@media (min-width: 481px) {
+    .account-nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal links on larger screens */
+        justify-content: center;
+    }
+}
+
+/* TASK 7: INTERACTIVE ANIMATION */
+.order-expansion {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+

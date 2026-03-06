@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | Pet Palace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body id="checkout-page">
+
+<header>
+    <h1>Pet Palace Checkout</h1>
+    <p>Order by: <strong>Rence A. Escala</strong></p>
+ 
+    <nav>
+        <a href="cart.html">Back to Cart</a>
+    </nav>
+</header>
+
+<main class="checkout-layout">
+
+    <!-- LEFT SIDE : FORM -->
+    <section class="form-container">
+        <h2>Order Progress</h2>
+
+        <form action="confirmation.html" method="GET">
+
+            <!-- Task: Fieldset grouping -->
+            <fieldset>
+                <legend>Shipping Address</legend>
+
+                <p>
+                    <label for="fname">Full Name:</label>
+                    <input type="text" id="fname" placeholder="Rence A. Escala" required>
+                </p>
+
+                <p>
+                    <label for="street">Street:</label>
+                    <input type="text" id="street" placeholder="123 Royal Lane" required>
+                </p>
+
+                <p>
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" placeholder="6415" required>
+                </p>
+
+            </fieldset>
+
+
+            <!-- Task: Radio inputs -->
+            <fieldset>
+                <legend>Payment Method</legend>
+
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="pay" value="card" checked>
+                        Credit Card
+                    </label>
+
+                    <label>
+                        <input type="radio" name="pay" value="paypal">
+                        PayPal
+                    </label>
+                </div>
+
+            </fieldset>
+
+        </form>
+    </section>
+
+
+    <!-- RIGHT SIDE : ORDER SUMMARY -->
+    <aside class="summary-sidebar">
+
+        <!-- Task 3.4: Order Summary -->
+        <h3>Order Summary</h3>
+
+        <div class="summary-row">
+            <span>Product Total:</span>
+            <span class="price">500.00</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Shipping Fee:</span>
+            <span class="price">50.00</span>
+        </div>
+
+        <hr>
+
+        <div class="summary-row total">
+            <span><strong>Final Total:</strong></span>
+            <span class="price">550.00</span>
+        </div>
+
+
+        <!-- Task 2.2 & 2.3: Main Action Button -->
+        <button class="place-order-btn">
+            Place Order
+        </button>
+
+    </aside>
+
+</main>
+
+</body>
+</html>
